@@ -16,6 +16,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/user/logout">Выйти</a>
         </li>
+        {{#if type}}
+        <li class="nav-item">
+          <a class="nav-link" href="/user/admin">Кабинет</a>
+        </li>
+        {{/if}}
       </ul>
     </div>
   </div>

@@ -16,11 +16,17 @@
         <li class="nav-item">
           <a class="nav-link" href="/user/logout">Выйти</a>
         </li>
-        {{#if type}}
+        {{!-- {{#if type}} --}}
         <li class="nav-item">
-          <a class="nav-link" href="/user/admin">Кабинет</a>
+          <a class="nav-link" href="/admin">Кабинет</a>
         </li>
-        {{/if}}
+        {{!-- {{/if}} --}}
+        <li class="nav-item">
+          <form id="search">
+            <input id="inputSearch" type="text" placeholder="Искать здесь...">
+            <button id="buttonSearch" type="submit"></button>
+          </form>
+        </li>
       </ul>
     </div>
   </div>

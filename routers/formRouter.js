@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Event, Tag } = require('../models/mongo');
+const { Event, Tag } = require('../model/model');
 const { model, modelNames } = require('mongoose');
 
 let eventModel = model("Events", Event)

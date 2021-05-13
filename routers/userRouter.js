@@ -6,11 +6,11 @@ const bcrypt = require("bcrypt");
 router.get("/signup", (req, res) => {
   const { name, email, password } = req.body;
   res.locals.name = name;
-  res.render("signup");
+  res.render("signup", { name });
 });
 
 router.post("/signup", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, type } = req.body;
   if (name && email && password) {
     // const hashPass = await bcrypt.hash(password, 10);
     // console.log(hashPass);
@@ -18,11 +18,13 @@ router.post("/signup", async (req, res) => {
       name,
       email,
       password, // hashPass,
+      admin: type,
     });
     console.log(currentUser);
     if (currentUser) {
       req.session.user = {
         id: currentUser._id,
+        type: currentUser.admin,
       };
 
       return res.status(200).redirect("/");
@@ -54,6 +56,10 @@ router.get("/logout", (req, res) => {
     res.clearCookie(req.app.get("cookieName"));
     return res.redirect("/");
   });
+});
+
+router.get("/form", (req, res) => {
+  res.render("form");
 });
 
 module.exports = router;

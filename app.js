@@ -5,6 +5,7 @@ const hbs = require("hbs");
 const path = require("path");
 const userRouter = require("./routers/userRouter");
 const indexRouter = require("./routers/indexRouter");
+const formRouter = require("./routers/formRouter");
 const mongoose = require("mongoose");
 const sessions = require("express-session"); //для чтения сессии
 const MongoStore = require("connect-mongo"); // для хранения сессии в базе данных mongoDB
@@ -51,18 +52,19 @@ serv.use((req, res, next) => {
   if (
     userId ||
     req.path === "/" ||
-    req.path === "/user/signin" ||
-    req.path === "/user/signup"
+    req.path === "/user/signup" ||
+    req.path === "/user/signin"
   ) {
     return next();
   }
-  return res.redirect("/user/signin");
+  return res.redirect("/user/signup");
 });
 
 serv.use("/", indexRouter);
 serv.use("/user", userRouter);
+serv, use("/form", formRouter);
 
-serv.listen(3000, () => {
+serv.listen(4000, () => {
   console.log("serverUP");
   mongoose.connect("mongodb://localhost:27017/kuda", {
     useCreateIndex: true,

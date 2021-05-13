@@ -1,0 +1,23 @@
+{{#each result}}
+
+<div>
+    <h1>{{eventName}}</h1>
+    <h2>{{shortEventDesc}}</h2>
+    <p class="date">{{date}}</p>
+    <img src="{{img_url}}" alt="">
+    <span class="event_full_desc">{{longEventDesc}}</span>
+
+    <div class="tags">
+        {{#each tag}}
+        <p class="sub_tag">{{this}}</p>
+        {{/each}}
+    </div>
+
+    <div class="social_media_links">
+        <a href="facebook.com">Facebook</a>
+        <a href="facebook.com">Facebook</a>
+        <a href="facebook.com">Facebook</a>
+    </div>
+</div>
+
+{{/each}}

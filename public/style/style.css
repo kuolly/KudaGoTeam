@@ -1,14 +1,149 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: #aa8e61;
+}
+h3 {
+  padding-left: 40px;
+}
 #ul {
   display: flex;
   flex-direction: row;
 }
 #a {
   padding-right: 20px;
-  padding-left: 10px;
+  padding-left: 13px;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
+  border-right: 1px solid #26957dd5;
+}
+a.nav-link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+a.nav-link:hover {
+  color: #26957dd5;
+}
+/* ------------------------------- ПОИСК -------------------- */
+
+#search {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  
+}
+#inputSearch,
+#buttonSearch {
+  outline: none;
+  background: transparent;
+}
+#inputSearch {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+  border: 3px solid rgb(122, 110, 93);
+}
+#buttonSearch {
+  border: none;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+#buttonSearch:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: rgb(122, 110, 93);
+}
+#inputSearch:focus {
+  border-color: #26957dd5;
+}
+
+/* ------------------------------------------------------------ */
+
+#mainDiv {
+  background-color: #f8f9fa;
+  padding: 50px;
+  /* margin: 20px; */
+}
+
+.wrapper {
+  display: grid;
+  padding: 40px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(130px, auto);
+  grid-gap: 5px;
+}
+
+.wrapper > div {
+  padding: 1px;
+  background-color: burlywood;
+}
+.wrapper > div.light {
+  padding: 1px;
+  background-color: rgb(122, 110, 93);
+}
+
+.box1 {
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+.box2 {
+  grid-column: 4;
+  grid-row: 3;
+}
+.box3 {
+  grid-column: 2;
+  grid-row: 1/3;
+}
+.box4 {
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+.box5 {
+  grid-column: 3/4;
+  grid-row: 3;
+}
+.box7 {
+  grid-column: 2/4;
+  grid-row: 4;
+}
+.box6 {
+  grid-column: 1;
+  grid-row: 4/5;
+}
+.box8 {
+  grid-column: 4;
+  grid-row: 4;
+}
+.box9 {
+  grid-column: 2;
+  grid-row: 3/4;
+}
+
+.box10 {
+  grid-column: 1;
+  grid-row: 4/5;
+}
+
+.box {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 16px 32px 0 rgba(132, 202, 191, 0.35);
+  transition: 0.5s;
+}
+.box:hover {
+  box-shadow: 0 0 0 0 #26957dd5;
+  background-position: 0 0;
 }

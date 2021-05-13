@@ -62,7 +62,7 @@ serv.use((req, res, next) => {
 
 serv.use("/", indexRouter);
 serv.use("/user", userRouter);
-serv, use("/form", formRouter);
+serv.use("/form", formRouter);
 
 serv.listen(4000, () => {
   console.log("serverUP");

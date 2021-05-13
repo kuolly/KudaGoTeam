@@ -25,6 +25,7 @@ router.post("/signup", async (req, res) => {
       req.session.user = {
         id: currentUser._id,
         type: currentUser.admin,
+        
       };
 
       return res.status(200).redirect("/");

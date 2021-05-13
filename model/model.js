@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose');
 const mongoose = require('mongoose');
-const mongoUrl = 'mongodb://localhost:27017/abcd';
+const mongoUrl = 'mongodb://localhost:27017/kuda';
 
 mongoose.connect(mongoUrl, {
     useCreateIndex: true,

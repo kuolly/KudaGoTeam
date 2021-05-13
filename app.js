@@ -1,3 +1,5 @@
+/** @format */
+
 const express = require("express");
 const serv = express();
 const morgan = require("morgan");
@@ -62,7 +64,7 @@ serv.use((req, res, next) => {
 
 serv.use("/", indexRouter);
 serv.use("/user", userRouter);
-serv, use("/form", formRouter);
+// serv.use("/form", formRouter);
 
 serv.listen(4000, () => {
   console.log("serverUP");

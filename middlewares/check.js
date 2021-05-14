@@ -1,7 +1,8 @@
 function check(req, res, next) {
-  if (req.session?.user.id && req.session?.user.type === "admin") {
+  if (req.session?.user._id && req.session?.user.admin === "admin") {
     return next();
   }
+
   return res.redirect("/");
 }
 

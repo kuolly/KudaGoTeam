@@ -1,4 +1,3 @@
-/** @format */
 
 const express = require("express");
 const serv = express();
@@ -12,6 +11,7 @@ const mongoose = require("mongoose");
 const sessions = require("express-session"); //для чтения сессии
 const MongoStore = require("connect-mongo"); // для хранения сессии в базе данных mongoDB
 const tagAutocomplete = require("./routers/tagAutocomplite");
+const check = require("./middlewares/check");
 
 serv.set("view engine", "hbs");
 serv.set("cookieName", "sid");
@@ -69,6 +69,10 @@ serv.use("/user", userRouter);
 serv.use("/form", formRouter);
 serv.use("/api", tagAutocomplete);
 // serv.use("/events/add", formRouter);
+
+serv.get("/admin", check, (req, res) => {
+  res.render("admin");
+});
 
 serv.listen(4000, () => {
   console.log("serverUP");

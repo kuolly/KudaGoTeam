@@ -1,4 +1,8 @@
+
+const tagsArr = document.querySelector(".tagsArr")
+
 function autocomplete(inp, fetchTags) {
+    let newArr = []
 
     inp.addEventListener("input", async function (e) {
         let autocompleteList, val = this.value;
@@ -10,6 +14,7 @@ function autocomplete(inp, fetchTags) {
         autocompleteList.setAttribute("id", this.id + "autocomplete-list");
         autocompleteList.setAttribute("class", "autocomplete-items");
 
+
         const tags = await fetchTags(val);
         console.log('tags--->>>>>', tags);
 
@@ -18,7 +23,12 @@ function autocomplete(inp, fetchTags) {
 
             tag.innerText = tags[i];
             tag.addEventListener("click", function (e) {
-                inp.value = tags[i]
+                newArr.push(tags[i])
+                console.log(newArr);
+                let newArrText = newArr.join(',')
+                console.log(newArrText);
+                tagsArr.value = newArrText;
+                inp.value = ""
 
                 closeAutoComplete();
             });
@@ -45,7 +55,7 @@ function autocomplete(inp, fetchTags) {
     });
 }
 
-let tags = ["concert", "event", "exhibision", "show", "live", "any"];
+let tags = ["concert", "event", "exhibision", "show", "live", "performance", "ballet", "opera", "meet-up", "fair", "comedy", "stand-up"];
 
 async function fetchTags(queryString) {
     const response = await fetch(`/api/getTags/?text=${queryString}`, { headers: { 'Content-Type': 'application/json' } })
@@ -55,4 +65,6 @@ async function fetchTags(queryString) {
 }
 
 
-autocomplete(document.querySelector('[name="tag"]'), fetchTags);
+autocomplete(document.querySelector('[name="tag2"]'), fetchTags);
+
+// let tags = ["concert", "event", "exhibision", "show", "live", "performance", "ballet", "opera", "meet-up", "fair", "comedy", "stand-up"];

@@ -20,9 +20,7 @@ router.get("/", async (req, res) => {
   res.render("index", { posts1, posts2 });
 });
 
-router.get("/admin", check, (req, res) => {
-  res.render("admin");
-});
+
 
 router.get("/events/:id", async (req, res) => {
   // console.log(req.params.id);

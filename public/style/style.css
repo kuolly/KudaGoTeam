@@ -7,7 +7,6 @@
   color: aliceblue !important;
 }
 
-
 #ul {
   display: flex;
   flex-direction: row;
@@ -96,11 +95,15 @@ p {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 50px;
+  color: black !important;
+}
+h4 {
+  color: black !important;
 }
 
-.txt{
+.txt {
   padding: 0px 10px 40px 10px;
-
+  color: black !important;
 }
 
 /* .wrapper > div,
@@ -159,7 +162,7 @@ p {
 .box {
   font-size: 16px;
   font-weight: 300;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   box-shadow: 1px 2px 5px 0 rgba(132, 202, 191, 0.35);
   transition: 0.5s;
   border: 1px solid #26957dd5;

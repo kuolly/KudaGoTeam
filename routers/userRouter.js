@@ -58,10 +58,6 @@ router.get("/logout", (req, res) => {
   });
 });
 
-router.get("/form", (req, res) => {
-  res.render("form");
-});
-
 
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const { Schema, model, pluralize } = require("mongoose");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 pluralize(null);
 
 const TagsSchema = new Schema({
@@ -23,16 +23,4 @@ const EventSchema = new Schema({
 
 const Event = model("Events", EventSchema);
 
-const UserSchema = new Schema({
-  name: String,
-  login: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-  password: String,
-});
-
-const User = model("Users", UserSchema);
-
-module.exports = { Tag, Event, User };
+module.exports = { Tag, Event };

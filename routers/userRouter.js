@@ -40,12 +40,11 @@ router.get("/signin", (req, res) => {
 });
 
 router.post("/signin", async (req, res) => {
-  console.log("body = ", req.body);
   const { name, password } = req.body;
-  const userObj = await userModel.findOne({ name });
-  console.log(userObj);
+  const userObj = await userModel.findOne({ name })
   if (userObj && userObj.password === password) {
-    req.session.name = name;
+    console.log("if");
+    req.session.user = userObj;
   }
   res.redirect("/");
 });

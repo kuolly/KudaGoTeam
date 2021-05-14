@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const { Tag, Event, User } = require("../models/models");
+const { Tag, Event} = require("../model/model");
 
 seeds();
 
 async function seeds() {
-  await mongoose.connect("mongodb://localhost:27017/kudaGO", {
+  await mongoose.connect("mongodb://localhost:27017/kuda", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

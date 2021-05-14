@@ -1,9 +1,8 @@
-/** @format */
-
 const { Router } = require("express");
 const router = Router();
 const userModel = require("../model/user.model");
 const check = require("../middlewares/check");
+const { Tag, Event } = require("../model/model");
 
 const posts = [
   {
@@ -211,7 +210,14 @@ const posts = [
 router.get("/", async (req, res) => {
   let users = await userModel.find();
   res.locals.users = users;
-  res.render("index", { posts: posts });
+  const postFromBase = await Event.find().limit(9).lean()
+  console.log(postFromBase);
+  const posts1 = postFromBase.map((el, index) => ({
+    ...el,
+    stylebox: "box" + index,
+  }))
+  // console.log(posts1);
+  res.render("index", { posts1 });
 });
 
 router.get("/admin", check, (req, res) => {
@@ -220,7 +226,7 @@ router.get("/admin", check, (req, res) => {
 
 router.get("/event/:id", async (req, res) => {
   const post = posts.find((item) => item.id === +req.params.id);
-  res.render("fullevent",post ); //роут для рендера стр с полным описанием мероприятия
+  res.render("fullevent", post); //роут для рендера стр с полным описанием мероприятия
 });
 
 const eventJson = router.post("/", async (res, req) => {

@@ -72,7 +72,7 @@ serv.use("/api", tagAutocomplete);
 
 serv.listen(4000, () => {
   console.log("serverUP");
-  mongoose.connect("mongodb://localhost:27017/kudaGO", {
+  mongoose.connect("mongodb://localhost:27017/kuda", {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,

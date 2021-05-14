@@ -4,8 +4,9 @@
     <h1>{{eventName}}</h1>
     <h2>{{shortEventDesc}}</h2>
     <p class="date">{{date}}</p>
-    <img src="{{img_url}}" alt="">
-    <span class="event_full_desc">{{longEventDesc}}</span>
+    <img src="{{img_url}}" alt=""
+        style="display: flex; flex-direction: column; justify-content:flex-start; max-width:20%; width:250px">
+    <span id="" class="event_full_desc">{{{longEventDesc}}}</span>
 
     <div class="tags">
         {{#each tag}}
@@ -20,4 +21,27 @@
     </div>
 </div>
 
+<form action="/form/events/edit/{{_id}}" method="POST" id="{{_id}}"
+    style="display: none; flex-direction: column; justify-content:flex-start; max-width:100%; width:500px">
+    <input type="text" name="eventName" value={{eventName}}>
+    <input type="text" name="shortEventDesc" value={{shortEventDesc}}>
+    <textarea id="mainTextArea" type="" name="longEventDesc" id="" cols="15" rows="15"
+        value="{{longEventDesc}}"></textarea>
+    <input autocomplete='off' type="text" name="tag" value={{tag}}>
+
+    <button>Edit</button>
+</form>
+<form action="/form/events/delete/{{_id}}" method="POST">
+    <button>Delete</button>
+</form>
+
 {{/each}}
+
+<script>
+    const editShow = () => {
+        let id = event.target.id.substr(5, event.target.id.length);
+        console.log('-->', event.target.id, id)
+        let form = document.getElementById(id);
+        form.style.display = "flex";
+    }
+</script>

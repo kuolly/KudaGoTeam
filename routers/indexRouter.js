@@ -24,9 +24,11 @@ router.get("/admin", check, (req, res) => {
   res.render("admin");
 });
 
-router.get("/event/:id", async (req, res) => {
-  const post = posts.find((item) => item.id === +req.params.id);
-  res.render("fullevent", post); //роут для рендера стр с полным описанием мероприятия
+router.get("/events/:id", async (req, res) => {
+  // console.log(req.params.id);
+  const post = await Event.findById(req.params.id);
+  // console.log(post);
+  res.render("fullevent", {post}); //роут для рендера стр с полным описанием мероприятия
 });
 
 module.exports = router;

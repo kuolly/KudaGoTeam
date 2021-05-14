@@ -1,29 +1,38 @@
-const { model, Schema } = require('mongoose');
-const mongoose = require('mongoose');
-const mongoUrl = 'mongodb://localhost:27017/kuda';
+const { Schema, model, pluralize } = require("mongoose");
+// const mongoose = require("mongoose");
+pluralize(null);
 
-mongoose.connect(mongoUrl, {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).catch(error => console.log('EEEEROOOR--->>>', error))
-
-const Event = new Schema({
-    eventName: String,
-    date: Date,
-    shortEventDesc: String,
-    longEventDesc: String,
-    img_url: String,
-    tag: Array,
+const TagsSchema = new Schema({
+  name: String,
 });
 
+const Tag = model("Tags", TagsSchema);
 
+const EventSchema = new Schema({
+  title: String,
+  short_description: String,
+  arr_img: Array,
+  main_img: String,
+  long_description: String,
+  dates: Array,
+  place: String,
+  videos: Array,
+  tags: Array,
+  status: String,
+});
 
-const Tag = new Schema({
-    tag: Array,
-})
+const Event = model("Events", EventSchema);
 
-module.exports = {
-    Event,
-    Tag,
-};
+const UserSchema = new Schema({
+  name: String,
+  login: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  password: String,
+});
+
+const User = model("Users", UserSchema);
+
+module.exports = { Tag, Event, User };

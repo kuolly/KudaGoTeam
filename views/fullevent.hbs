@@ -1,36 +1,52 @@
-<h1>Мероприятие</h1>
+
 <div class="mainevent">
-    <h1>{{title}}</h1>
+<figure class="text-center">
+  <blockquote class="blockquote">
+  <h1>{{title}}</h1>
+  </blockquote>
+</figure>
+
+  
   <div class="sim-slider">
   <ul class="sim-slider-list">
     <li><img src="http://pvbk.spb.ru/inc/slider/imgs/no-image.gif" alt="screen"></li> 
-    <li class="sim-slider-element"><img src="http://pvbk.spb.ru/inc/slider/imgs/planet0.jpg" alt="0"></li>
-    <li class="sim-slider-element"><img src="http://pvbk.spb.ru/inc/slider/imgs/planet1.jpg" alt="1"></li>
-    <li class="sim-slider-element"><img src="http://pvbk.spb.ru/inc/slider/imgs/planet2.jpg" alt="2"></li>
+    {{#each arr_img}}
+    <li class="sim-slider-element"><img src={{this}} alt="0"></li>
+{{/each}}
+
   </ul>
   <div class="sim-slider-arrow-left"></div>
   <div class="sim-slider-arrow-right"></div>
   <div class="sim-slider-dots"></div>
 </div>
 
-<h2>{{shortdescription}}</h2>
-   
-    <span class="event_full_desc">{{this.long_description}}</span>
+  <div class="social_media_links">
+        <a href="facebook.com">Facebook</a>
+        <a href="facebook.com">Facebook</a>
+        <a href="facebook.com">Facebook</a>
+    </div>
+ 
+
+   <div class ="fullDesc">
+ <span class="event_full_desc">{{this.long_description}}</span>
+</div>
+
 
     <div class="tags">
-        {{#each tag}}
-        <p class="sub_tag">{{this}}</p>
+      <p><strong>Тэги:</p></strong>
+      {{#each tags}}
+      <button type="button" class="btn btn-outline-primary">{{this}}</button>
         {{/each}}
     </div>
 
-
-
-
-    <div class="social_media_links">
-        <a href="facebook.com">Facebook</a>
-        <a href="facebook.com">Facebook</a>
-        <a href="facebook.com">Facebook</a>
+  <div class="date">
+    <p><strong>Когда? <br> {{this.dates}}</strong></p>
+        
     </div>
+
+
+
+  
 </div>
 
 

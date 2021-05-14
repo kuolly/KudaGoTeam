@@ -20,7 +20,7 @@ router.post("/signup", async (req, res) => {
       password, // hashPass,
       admin: type,
     });
-    console.log(currentUser);
+    // console.log(currentUser);
     if (currentUser) {
       req.session.user = {
         id: currentUser._id,

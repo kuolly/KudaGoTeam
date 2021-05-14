@@ -1,30 +1,3 @@
-/** @format */
-const Templates = {};
-
-async function render(templateName, data) {
-  if (!Templates[templateName]) {
-    const str = await (await fetch(`/view/${templateName}.hbs`)).text();
-    Templates[templateName] = Handlebars.compile(str);
-  }
-
-  return Templates[templateName](data);
-}
-
-
-
-let listEvent = document.querySelector(".wrapper");
-
-listEvent?.addEventListener("click", async (event) => {
-  event.preventDefault();
-  // const response = await fetch(`/event/${event.target.id}`, {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
-    window.location = `/event/${event.target.id}`;
-  // const responseJson = await response.json();
-});
 
 function Sim(sldrId) {
   let id = document.getElementById(sldrId);
@@ -33,7 +6,6 @@ function Sim(sldrId) {
   } else {
     this.sldrRoot = document.querySelector(".sim-slider");
   }
-  
 
   // Carousel objects
   this.sldrList = this.sldrRoot.querySelector(".sim-slider-list");

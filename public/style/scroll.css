@@ -1,5 +1,5 @@
 img {
-  width: 100%; !important;
+  width: 100%; 
 }
 
 .sim-slider {
@@ -87,3 +87,6 @@ span.sim-dot {
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+

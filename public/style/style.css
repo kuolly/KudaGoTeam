@@ -157,4 +157,6 @@ a.nav-link:hover {
 
 .imgIndex{
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }

@@ -11,10 +11,7 @@ const formRouter = require("./routers/formRouter");
 const mongoose = require("mongoose");
 const sessions = require("express-session"); //для чтения сессии
 const MongoStore = require("connect-mongo"); // для хранения сессии в базе данных mongoDB
-const tagAutocomplete = require('./routers/tagAutocomplite')
-
-
-
+const tagAutocomplete = require("./routers/tagAutocomplite");
 
 serv.set("view engine", "hbs");
 serv.set("cookieName", "sid");
@@ -54,7 +51,8 @@ serv.use(express.urlencoded({ extended: true }));
 serv.use(morgan("dev"));
 
 serv.use((req, res, next) => {
-  const userId = req.session?.user?.id;
+  const userId = req.session?.user?._id;
+  // console.log(req.session);
   if (
     userId ||
     req.path === "/" ||
@@ -69,7 +67,7 @@ serv.use((req, res, next) => {
 serv.use("/", indexRouter);
 serv.use("/user", userRouter);
 serv.use("/form", formRouter);
-serv.use("/api", tagAutocomplete)
+serv.use("/api", tagAutocomplete);
 // serv.use("/events/add", formRouter);
 
 serv.listen(4000, () => {

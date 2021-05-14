@@ -2,19 +2,24 @@
 <div class="mainevent">
 <figure class="text-center">
   <blockquote class="blockquote">
-  <h1>{{title}}</h1>
+  <h1>{{post.title}}</h1>
+  <p>{{post.short_description}}</p>
   </blockquote>
 </figure>
+
+
+
 
   
   <div class="sim-slider">
   <ul class="sim-slider-list">
     <li><img src="http://pvbk.spb.ru/inc/slider/imgs/no-image.gif" alt="screen"></li> 
-    {{#each arr_img}}
+    {{#each post.arr_img}}
     <li class="sim-slider-element"><img src={{this}} alt="0"></li>
 {{/each}}
 
   </ul>
+ 
   <div class="sim-slider-arrow-left"></div>
   <div class="sim-slider-arrow-right"></div>
   <div class="sim-slider-dots"></div>
@@ -22,31 +27,32 @@
 
   <div class="social_media_links">
         <a href="facebook.com">Facebook</a>
-        <a href="facebook.com">Facebook</a>
-        <a href="facebook.com">Facebook</a>
+        <a href="vk.com"> Вконтакте</a>
+        <a href="insagram.com">Instagram</a>
     </div>
  
 
    <div class ="fullDesc">
- <span class="event_full_desc">{{this.long_description}}</span>
+      
+ <p><em><span class="event_full_desc">{{post.long_description}}</span></em>
+ 
 </div>
 
 
     <div class="tags">
       <p><strong>Тэги:</p></strong>
-      {{#each tags}}
+      {{#each post.tags}}
       <button type="button" class="btn btn-outline-primary">{{this}}</button>
         {{/each}}
     </div>
 
   <div class="date">
-    <p><strong>Когда? <br> {{this.dates}}</strong></p>
-        
+     {{#each post.dates}}
+    <p><strong>Когда? <br> {{this}}</strong></p>
+ {{/each}}
     </div>
 
 
-
-  
 </div>
 
 

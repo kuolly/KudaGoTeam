@@ -2,12 +2,12 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-.navbar {
-  background-color: #aa8e61;
+.user {
+  background-color: black !important;
+  color: aliceblue !important;
 }
-h3 {
-  padding-left: 40px;
-}
+
+
 #ul {
   display: flex;
   flex-direction: row;
@@ -30,7 +30,13 @@ a.nav-link {
 a.nav-link:hover {
   color: #26957dd5;
 }
+p {
+  color: #26957dd5;
+}
 /* ------------------------------- ПОИСК -------------------- */
+#divSearch {
+  order: 0;
+}
 
 #search {
   position: relative;
@@ -46,7 +52,7 @@ a.nav-link:hover {
   width: 100%;
   height: 42px;
   padding-left: 15px;
-  border: 3px solid rgb(122, 110, 93);
+  border: 3px solid azure;
 }
 #buttonSearch {
   border: none;
@@ -61,7 +67,7 @@ a.nav-link:hover {
   content: "\f002";
   font-family: FontAwesome;
   font-size: 16px;
-  color: rgb(122, 110, 93);
+  color: azure;
 }
 #inputSearch:focus {
   border-color: #26957dd5;
@@ -71,26 +77,41 @@ a.nav-link:hover {
 
 #mainDiv {
   background-color: #f8f9fa;
-  padding: 50px;
+  padding: 40px 150px;
   /* margin: 20px; */
 }
 
 .wrapper {
   display: grid;
-  padding: 40px;
+  /* padding: 40px; */
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-auto-rows: minmax(130px, auto);
   grid-gap: 5px;
 }
 
-.wrapper > div {
-  padding: 1px;
-  background-color: burlywood;
+.wrapperSecond {
+  margin-top: 150px;
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 50px;
 }
-.wrapper > div.light {
-  padding: 1px;
-  background-color: rgb(122, 110, 93);
+
+.txt{
+  padding: 0px 10px 40px 10px;
+
 }
+
+/* .wrapper > div,
+.wrapperSecond > div {
+  padding: 1px;
+  color: rgb(0, 0, 0);
+}
+
+.wrapperSecond > div {
+  margin-top: 10px;
+} */
 
 .box1 {
   grid-column: 1/2;
@@ -136,27 +157,40 @@ a.nav-link:hover {
 }
 
 .box {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 300;
   color: rgb(0, 0, 0);
   box-shadow: 1px 2px 5px 0 rgba(132, 202, 191, 0.35);
   transition: 0.5s;
-}
-.box:hover {
-  box-shadow: 0 0 0 0 #26957dd5;
-  background-position: 0 0;
+  border: 1px solid #26957dd5;
 }
 
 .absolut {
   position: absolute;
-  top: 0;
+  top: 20px;
+  left: 30px;
+  font: 1.5em sans-serif;
 }
-.relative{
+.relative {
   position: relative;
 }
 
-.imgIndex{
+.imgIndex {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+
+.box:hover .shadow {
+  opacity: 0;
+  transition: 0.5s;
 }

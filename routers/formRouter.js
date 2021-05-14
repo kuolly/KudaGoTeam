@@ -40,6 +40,23 @@ router.post("/events", async (req, res) => {
   res.redirect("/form/events");
 });
 
+// router.post("/form", async (req, res) => {
+//   const { fruit, vegetables, makaroni } = req.body;
+//   console.log(req.body);
+//   if (fruit && vegetables && makaroni) {
+//     const currentForm = await formModel.create({ fruit, vegetables, makaroni });
+//     console.log(currentForm);
+//     if (currentForm) {
+//       return res.status(200).redirect("/");
+//     }
+//     return res.status(418).redirect("/user/form");
+//   }
+//   return res.status(418).redirect("/user/form");
+// });
+
+
+
+
 
 
 

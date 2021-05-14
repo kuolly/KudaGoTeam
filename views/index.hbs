@@ -1,62 +1,33 @@
 <div id="mainDiv">
-  <h3> Куда Сходить в Москве </h3>
+  <h3> Куда Сходить в <p>Москве</p>
+  </h3>
   <div class="wrapper">
     {{#each posts1}}
     <div class="box relative {{this.stylebox}}" id={{this._id}}>
       <img class="imgIndex" src="{{this.main_img}}" alt="">
+      <div class="shadow"></div>
       <div class="absolut"> {{this.title}} </div>
     </div>
     {{/each}}
-
-
-    {{!-- 
-    {{#each posts}}
-    <div class="box box2" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-
-
-    {{#each posts}}
-    <div class="box box3 light" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box4 light" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box5" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box6" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box7" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box8" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box9" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-    {{#each posts}}
-    <div class="box box10 light" id={{this.id}}>
-      {{this.title}}
-    </div>
-    {{/each}}
-  </div> --}}
-
   </div>
+
+
+  <div class="wrapperSecond">
+{{#each posts2}}
+<div>
+    <div class="img-preview"><img class="imgIndex" src="{{this.main_img}}" alt=""></div>
+    <div class="box box11">
+      <h4>{{this.title}}</h4><hr>
+      <div class="txt">
+      {{this.short_description}}
+
+      </div>
+    </div>
+
+
+</div>
+
+{{/each}}
+  </div>
+
+</div>

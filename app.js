@@ -70,6 +70,7 @@ serv.use("/", indexRouter);
 serv.use("/user", userRouter);
 serv.use("/form", formRouter);
 serv.use("/api", tagAutocomplete)
+// serv.use("/events/add", formRouter);
 
 serv.listen(4000, () => {
   console.log("serverUP");

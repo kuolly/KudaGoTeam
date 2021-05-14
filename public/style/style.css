@@ -36,7 +36,6 @@ a.nav-link:hover {
   position: relative;
   width: 300px;
   margin: 0 auto;
-  
 }
 #inputSearch,
 #buttonSearch {
@@ -140,7 +139,7 @@ a.nav-link:hover {
   font-size: 24px;
   font-weight: 300;
   color: rgb(0, 0, 0);
-  box-shadow: 0 16px 32px 0 rgba(132, 202, 191, 0.35);
+  box-shadow: 1px 2px 5px 0 rgba(132, 202, 191, 0.35);
   transition: 0.5s;
 }
 .box:hover {
@@ -148,3 +147,14 @@ a.nav-link:hover {
   background-position: 0 0;
 }
 
+.absolut {
+  position: absolute;
+  top: 0;
+}
+.relative{
+  position: relative;
+}
+
+.imgIndex{
+  object-fit: cover;
+}

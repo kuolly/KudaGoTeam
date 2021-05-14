@@ -10,34 +10,21 @@ async function render(templateName, data) {
   return Templates[templateName](data);
 }
 
-let obj = {
-  title: "Иммерсивное шоу «Зеркало Карлоса Сантоса»",
-  short_description:
-    "Театральный променад с ужином в финале представляют режиссёр Талгат Баталов и драматург Максим Курочкин. Зрителям предстоит сделать то, чего мы все очень сильно боимся. Погрузиться в самих себя.",
-  arr_img: [
-    "https://kudago.com/media/thumbs/xl/images/list/e4/e1/e4e171392c9261ade9bd1318fdcd196d.jpg",
-    "https://kudago.com/media/thumbs/xl/images/event/0f/3c/0f3ca971baff287f4323dc0ad62ba21f.jpg",
-    "https://kudago.com/media/thumbs/xl/images/event/4b/d5/4bd59e591e6725494b09bb2a1ff7d04e.jpg",
-  ],
-  main_img:
-    "https://kudago.com/media/thumbs/xl/images/event/75/50/7550df2733552b785c84849c7dd1989c.jpg",
-  long_description:
-    "Спектакль по пьесе Максима Курочкина, лауреата «Антибукера», поставил номинант «Золотой Маски» Талгат Баталов. Создатели постановки предлагают зрителям пережить необычный и в каком-то смысле пугающий опыт. На площади в тысячу квадратных метров в течение полутора часов разворачивается действо, участниками которого становятся только двенадцать зрителей. Променад завершается ужином для всех участников. Во время спектакля зрители проходят через различные комнаты-состояния. В некоторых — им может быть по-настоящему страшно. Но это шанс вспомнить свои ценности, свои настоящие цели, забытые или отложенные в нескончаемом процессе важных ежедневных дел. По мнению режиссёра Талгата Баталова, этот спектакль — возможность шагнуть в самого себя и встретиться лицом к лицу со своими страхами и внутренним диалогом. Шоу представляет собой новую форму развлечения, связанную с самопознанием. Что именно будет происходить в комнатах — тайна, но кое-что всё-таки известно: каждого зрителя ждёт личный, ни с чем не сравнимый опыт, который зависит только от его собственных воспоминаний, переживаний и вовлечённости. А финальный ужин будет самым настоящим, в меню включены мясные блюда, различные овощные закуски, сыры и напитки.",
-  dates: ["13 мая 18:15, 19:45, 20:30", "14 мая 18:15, 19:00", "15 мая"],
-  place: "",
-  videos: null,
-  tags: ["экскурсия", "крыша", "фото"],
-  status: "published",
-};
-
-let title = obj.title;
-let shortDes = obj.short_description;
-let imgArr = obj.arr_img;
-let longDesc = obj.long_description;
 
 
+let listEvent = document.querySelector(".wrapper");
 
-
+listEvent?.addEventListener("click", async (event) => {
+  event.preventDefault();
+  // const response = await fetch(`/event/${event.target.id}`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
+    window.location = `/event/${event.target.id}`;
+  // const responseJson = await response.json();
+});
 
 function Sim(sldrId) {
   let id = document.getElementById(sldrId);
@@ -46,6 +33,7 @@ function Sim(sldrId) {
   } else {
     this.sldrRoot = document.querySelector(".sim-slider");
   }
+  
 
   // Carousel objects
   this.sldrList = this.sldrRoot.querySelector(".sim-slider-list");

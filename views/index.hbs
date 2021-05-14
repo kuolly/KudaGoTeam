@@ -1,38 +1,62 @@
 <div id="mainDiv">
   <h3> Куда Сходить в Москве </h3>
-
-
   <div class="wrapper">
-    <div class="box box1 ">
-      Box 1
+    {{#each posts1}}
+    <div class="box relative {{this.stylebox}}" id={{this._id}}>
+      <img class="imgIndex" src="{{this.main_img}}" alt="">
+      <div class="absolut"> {{this.title}} </div>
     </div>
-    <div class="box box2 ">
-      Box2
+    {{/each}}
+
+
+    {{!-- 
+    {{#each posts}}
+    <div class="box box2" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box3 light">
-      Box 3
+    {{/each}}
+
+
+    {{#each posts}}
+    <div class="box box3 light" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box4 light">
-      Box4
+    {{/each}}
+    {{#each posts}}
+    <div class="box box4 light" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box5 ">
-      Box5
+    {{/each}}
+    {{#each posts}}
+    <div class="box box5" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box6 light">
-      Box6
+    {{/each}}
+    {{#each posts}}
+    <div class="box box6" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box7 ">
-      Box7
+    {{/each}}
+    {{#each posts}}
+    <div class="box box7" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box8  light">
-      Box8
+    {{/each}}
+    {{#each posts}}
+    <div class="box box8" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box9 ">
-      Box9
+    {{/each}}
+    {{#each posts}}
+    <div class="box box9" id={{this.id}}>
+      {{this.title}}
     </div>
-    <div class="box box10 light">
-      Box10
+    {{/each}}
+    {{#each posts}}
+    <div class="box box10 light" id={{this.id}}>
+      {{this.title}}
     </div>
+    {{/each}}
+  </div> --}}
 
   </div>
-</div>
